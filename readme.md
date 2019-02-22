@@ -1,4 +1,4 @@
-<-- GitSearch -->
+<-- GitSearch --> <br>
 Create an app and push it to GitHub.
 When you're done, submit the link to your GitHub repo at the bottom of the page.
 Requirements:
