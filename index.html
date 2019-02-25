@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Git Search</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Git Search</h1>
+		<h2>Search for a user's repos by their handle</h2>
+	</header>
+	<div class="container">
+		<form id="js-form">
+            <label for="search-term">Enter handle:</label>
+            <input type="text" name="search-user" id="js-search-user" required>
+            <input type="submit" value="Go!">
+        </form>
+
+        <p id="js-error-message" class="error-message"></p>
+
+		<section id="search-results">
+			
+		</section>
+	</div>
+
+
+	<script src="script.js"></script>
+	
+</body>
+</html>
 
