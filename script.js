@@ -7,6 +7,22 @@ function formatQueryParams(params) {
 	return queryItems;
 }
 
+function displayResults(responseJson) {
+
+	console.log(responseJson);
+
+	$('#results-list').empty();
+
+  	for (let i = 0; i < responseJson.length; i++){
+    	console.log('success');
+    	$('#results-list').append(
+      		`<li><h3><a href="${responseJson[i]['html_url']}">${responseJson[i]['name']}</a></h3>
+			</li>`
+		)};
+
+	$('#results').removeClass('hidden');
+};
+
 function getNews(query) {
 	const searchUser = query;
 	const params = {
@@ -24,7 +40,7 @@ function getNews(query) {
 				}
 				throw new Error(response.statusText);
 				})
-				.then(responseJson => console.log(responseJson))
+				.then(responseJson => displayResults(responseJson))
 				.catch(err => {
 					$('#js-error-message').text(`Something went wrong: ${err.message}`);
 				});
@@ -33,8 +49,8 @@ function getNews(query) {
 function watchForm() {
 	$('form').submit(event => {
 		event.preventDefault();
-		const searchTerm = $('#js-search-term').val();
-		getNews(searchTerm);
+		const searchUser = $('#js-search-user').val();
+		getNews(searchUser);
 	});
 }
 
